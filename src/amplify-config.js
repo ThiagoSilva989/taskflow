@@ -1,5 +1,6 @@
 
 import { Amplify } from 'aws-amplify';
+import { cognitoUserPoolsTokenProvider } from 'aws-amplify/auth/cognito';
 
 Amplify.configure({
   Auth: {
@@ -12,3 +13,6 @@ Amplify.configure({
     },
   },
 });
+
+// Mantém os tokens somente durante a sessão da aba.
+cognitoUserPoolsTokenProvider.setKeyValueStorage(window.sessionStorage);
