@@ -3,7 +3,7 @@ import { fetchAuthSession } from 'aws-amplify/auth';
 
 const API_URL = (
   import.meta.env.VITE_API_URL ||
-  'https://ao6583pb6e.execute-api.us-east-1.amazonaws.com'
+  'https://api.thiago.grupo-02.sd.ufersa.dev.br'
 ).replace(/\/$/, '');
 
 async function request(path, options = {}) {
