@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import {
   Activity, AlertCircle, ArrowUpRight, CalendarDays, Check, CheckCircle2,
   ChevronDown, Circle, ClipboardList, Clock3, LayoutDashboard, ListTodo,
-  LoaderCircle, LogOut, Menu, Plus, Search, SlidersHorizontal, Sparkles,
+  LoaderCircle, Menu, Plus, Search, SlidersHorizontal, Sparkles,
   Target, Trash2, X, Pencil, RefreshCw
 } from 'lucide-react'
 import { api, normalizarLista } from './services/api'
@@ -144,7 +144,6 @@ function App() {
           <div className="profile">
             <div className="avatar">TF</div>
             <div className="profile-text"><strong>Meu espaço</strong><span>Conta pessoal</span></div>
-            <LogOut size={17} className="profile-more" />
           </div>
         </div>
       </aside>
@@ -153,7 +152,12 @@ function App() {
         <header className="topbar">
           <button className="icon-button mobile-menu-button" onClick={() => setMobileMenu(true)} aria-label="Abrir menu"><Menu /></button>
           <div className="breadcrumb">Workspace <span>/</span> <strong>Visão geral</strong></div>
-          <div className="topbar-right"><span className="today-label"><CalendarDays size={16} /> {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</span><div className="top-avatar">TF</div></div>
+          <div className="topbar-right">
+            <span className="today-label">
+              <CalendarDays size={16} /> {new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+            </span>
+            <div className="top-avatar">TF</div>
+          </div>
         </header>
 
         <div className="page-wrap">
